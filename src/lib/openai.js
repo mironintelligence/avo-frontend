@@ -1,21 +1,27 @@
-// FRONTEND'DE ARTIK OPENAI YOK.
+// FRONTEND'DE OPENAI YOK.
 // TÜM İSTEKLER BACKEND'E GİDİYOR.
 
-const API_URL = "https://avo-backend-288x.onrender.com";
+const BASE_URL = "https://avo-backend-288x.onrender.com";
 
 export async function askOpenAI(messagesOrPrompt, isChat = false) {
-  const url = isChat ? "/api/chat" : "/api/petition";
+  const endpoint = isChat ? "/api/chat" : "/api/petition";
 
   const body = isChat
     ? { messages: messagesOrPrompt }
     : { prompt: messagesOrPrompt };
 
-  const res = await fetch(API_URL + url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  });
+  try {
+    const res = await fetch(BASE_URL + endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
 
-  const data = await res.json();
-  return data.reply;
+    const data = await res.json();
+
+    return data.reply;
+  } catch (err) {
+    console.error("FETCH ERROR:", err);
+    throw new Error("Bağlantı hatası oluştu.");
+  }
 }
