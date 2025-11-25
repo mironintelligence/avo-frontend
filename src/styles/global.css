@@ -1,0 +1,347 @@
+/* ===========================================================
+   AVO AI – Global Premium UI Theme
+   Glassmorphism + Soft Shadows + Cyan/Blue Gradient Identity
+   =========================================================== */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #0e1117;
+  color: #e7ecf2;
+  font-family: "Inter", sans-serif;
+  min-height: 100%;
+}
+
+.page {
+  padding-top: 80px;
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+}
+
+/* ==============================
+   NAVBAR
+   ============================== */
+.navbar {
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.navbar-title {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(to right, #00eaff, #0099ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.navbar-btns button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.07);
+  color: white;
+  transition: 0.2s;
+}
+
+.navbar-btns button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ==============================
+   GLASS EFFECT BASE
+   ============================== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(22px);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 0 18px rgba(0,0,0,0.4);
+}
+
+.glass-soft {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(18px);
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+
+/* ==============================
+   TITLES & HEADINGS
+   ============================== */
+
+.page-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #00eaff, #0099ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.page-title span {
+  display: block;
+  font-size: 18px;
+  opacity: 0.7;
+  margin-top: 4px;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* ==============================
+   BUTTONS
+   ============================== */
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: linear-gradient(to right, #008cff, #00cfff);
+  color: white;
+}
+
+.btn.primary:hover {
+  transform: scale(1.04);
+}
+
+.btn.secondary {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+}
+
+.btn.secondary:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ==============================
+   GRID STRUCTURES
+   ============================== */
+.section {
+  margin-top: 60px;
+}
+
+.why-grid,
+.steps-grid,
+.review-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.why-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.steps-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.review-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ==============================
+   SIDE MENU (CATEGORIES)
+   ============================== */
+
+.side-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.side-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-item {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #cfd9e5;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.side-item:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.side-item.active {
+  background: linear-gradient(to right, #00bfff, #0077ff);
+  color: white;
+}
+
+/* ==============================
+   PETITION CARDS
+   ============================== */
+
+.petition-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.petition-card {
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.petition-card:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.petition-card.active {
+  background: linear-gradient(to right, #00bfff, #0077ff);
+  color: white;
+}
+
+.petition-type {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.petition-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* ==============================
+   FORM
+   ============================== */
+
+.form-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.form-label {
+  margin-bottom: 4px;
+  display: block;
+}
+
+.form-required {
+  color: #ff6666;
+  padding-left: 4px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: white;
+  resize: none;
+}
+
+.form-input:focus {
+  outline: 2px solid #00cfff;
+}
+
+/* ==============================
+   PREVIEW
+   ============================== */
+
+.preview-box {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 16px;
+  margin-top: 20px;
+  border-radius: 16px;
+}
+
+.preview-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #00cfff;
+}
+
+.preview-text {
+  white-space: pre-wrap;
+  font-size: 14px;
+  color: #e6effa;
+  margin-bottom: 14px;
+  line-height: 1.45;
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.download-btn {
+  background: rgba(255,255,255,0.10);
+  padding: 8px 0;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.download-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+.footer {
+  margin-top: 80px;
+  text-align: center;
+  padding: 30px;
+  opacity: 0.6;
+}
+
+.footer-text span {
+  color: #00aaff;
+}
+
+.footer a {
+  color: #00d0ff;
+}

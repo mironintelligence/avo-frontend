@@ -1,0 +1,278 @@
+/* ===============================
+   PLEADINGS PAGE – LEGAL WRITER
+   Modern Glass UI + Responsive
+================================ */
+
+/* Ana container */
+.pleadings-container {
+  display: grid;
+  grid-template-columns: 260px 1fr 420px;
+  gap: 24px;
+  padding: 110px 24px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ------------------------------
+   SOL: KATEGORI SIDEBAR
+-------------------------------- */
+
+.pleadings-sidebar {
+  padding: 20px;
+  border-radius: 18px;
+  backdrop-filter: blur(22px);
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.side-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.side-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-item {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  color: #e5e7eb;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.18s;
+}
+
+.side-item:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(0, 200, 255, 0.35);
+}
+
+.side-item.active {
+  background: linear-gradient(90deg, #00c8ff, #0080ff);
+  border-color: transparent;
+  color: #020617;
+  font-weight: 700;
+}
+
+/* ------------------------------
+   ORTA: DİLEKÇE TÜRLERİ
+-------------------------------- */
+
+.pleadings-middle {
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  backdrop-filter: blur(22px);
+}
+
+.mid-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.petition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.petition-card {
+  padding: 14px 16px;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.22s;
+}
+
+.petition-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.petition-card.active {
+  background: linear-gradient(90deg, #00c8ff, #0080ff);
+  color: #020617;
+  border-color: transparent;
+}
+
+.petition-type {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.petition-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ------------------------------
+   SAĞ: FORM + ÖNİZLEME
+-------------------------------- */
+
+.pleadings-right {
+  padding: 20px;
+  border-radius: 18px;
+  backdrop-filter: blur(22px);
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.right-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.no-template {
+  opacity: 0.75;
+  font-size: 14px;
+}
+
+/* FORM */
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-label {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.form-required {
+  color: #fb7185;
+  margin-left: 4px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: rgba(15, 23, 42, 0.85);
+  color: #e5e7eb;
+  font-size: 13px;
+  resize: vertical;
+  transition: 0.18s;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(0, 200, 255, 0.35);
+}
+
+.preview-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px 0;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, #0080ff, #00c8ff);
+  color: #020617;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.18s;
+}
+
+.preview-btn:hover {
+  box-shadow: 0 0 18px rgba(0, 200, 255, 0.45);
+  transform: scale(1.01);
+}
+
+/* ------------------------------
+   ÖNİZLEME ALANI
+-------------------------------- */
+
+.preview-box {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 42, 0.85);
+}
+
+.preview-title {
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.preview-text {
+  font-size: 13px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  color: #e5e7eb;
+}
+
+/* ------------------------------
+   İNDİRME BUTONLARI
+-------------------------------- */
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.download-btn {
+  padding: 7px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  background: rgba(15, 23, 42, 0.9);
+  font-size: 12px;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: 0.18s;
+}
+
+.download-btn:hover {
+  border-color: var(--accent);
+  background: rgba(15, 23, 42, 1);
+  box-shadow: 0 0 12px rgba(0, 200, 255, 0.3);
+}
+
+/* ------------------------------
+   RESPONSIVE
+-------------------------------- */
+
+@media (max-width: 1200px) {
+  .pleadings-container {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .pleadings-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 110px 14px 40px;
+  }
+
+  .pleadings-right {
+    order: 3;
+  }
+}
+
+/* ========================================
+   ✔ EKLEDİĞİM TEK ŞEY (YAZILAR BEYAZ)
+======================================== */
+
+.petition-card * {
+  color: #ffffff !important;
+}
