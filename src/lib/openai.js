@@ -13,11 +13,17 @@ export async function askOpenAI(messagesOrPrompt, isChat = false) {
   try {
     const res = await fetch(BASE_URL + endpoint, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(body),
     });
 
     const data = await res.json();
+
+    if (!data || !data.reply) {
+      throw new Error("Backend yanıt vermedi.");
+    }
 
     return data.reply;
   } catch (err) {
