@@ -74,7 +74,7 @@ useEffect(() => {
 
   setLoading(true);
   try {
-  const res = await fetch("https://avo-backend-288x.onrender.com/api/petition", {
+  const res = await fetch("/api/petition", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",

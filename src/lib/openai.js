@@ -1,4 +1,4 @@
-const BASE_URL = "https://avo-backend-288x.onrender.com";
+const BASE_URL = "";
 
 export async function askOpenAI(messagesOrPrompt, isChat = false) {
   const endpoint = isChat ? "/api/chat" : "/api/petition";

@@ -57,7 +57,7 @@ export default function Chat() {
     setLoading(true);
 
     try {
-   const response = await fetch("https://avo-backend-288x.onrender.com/api/chat", {
+   const response = await fetch("/api/chat", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({
