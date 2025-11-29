@@ -1,3 +1,5 @@
+// src/lib/openai.js
+
 export async function askOpenAI(messagesOrPrompt, isChat = false) {
   const endpoint = isChat ? "/api/chat" : "/api/petition";
 

@@ -5,7 +5,7 @@ import "../chat.css";
 
 export default function Chat() {
   // ------ LIMIT SİSTEMİ ------
-  const MAX_MESSAGES = 20;     // 10 dakika ≈ 20 mesaj
+  const MAX_MESSAGES = 20;
   const STORAGE_KEY = "avo_ai_chat_count";
 
   const [msgCount, setMsgCount] = useState(
@@ -34,10 +34,11 @@ export default function Chat() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, loading]);
 
+  // ---------------------------- SEND ---------------------------- //
   const sendMessage = async () => {
     if (!input.trim()) return;
 
-    // --- LIMIT KONTROLÜ ---
+    // LIMİT
     if (msgCount >= MAX_MESSAGES) {
       setMessages((prev) => [
         ...prev,
@@ -49,7 +50,6 @@ export default function Chat() {
       ]);
       return;
     }
-    // -----------------------
 
     const userMsg = { role: "user", content: input.trim() };
     setMessages((prev) => [...prev, userMsg]);
@@ -57,30 +57,29 @@ export default function Chat() {
     setLoading(true);
 
     try {
-   const response = await fetch("/api/chat", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    messages: [
-      {
-        role: "system",
-        content:
-          "Sen AVO AI - Hukuki AI Danışmanısın. Türk hukuk sistemiyle uyumlu şekilde sade, net ve bilgilendirme amaçlı cevap ver.",
-      },
-      ...messages,
-      userMsg,
-    ],
-  }),
-});
-const data = await response.json();
-const reply = data.reply;
+      // *** BURASI SADECE askOpenAI ***
+      const reply = await askOpenAI(
+        [
+          {
+            role: "system",
+            content:
+              "Sen AVO AI - Hukuki AI Danışmanısın. Türk hukuk sistemiyle uyumlu şekilde sade, net ve bilgilendirme amaçlı cevap ver.",
+          },
+          ...messages,
+          userMsg,
+        ],
+        true // chat modu
+      );
 
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: reply || "Bir cevap oluşturulamadı." },
+        {
+          role: "assistant",
+          content: reply || "Bir cevap oluşturulamadı.",
+        },
       ]);
 
-      setMsgCount(msgCount + 1); // mesaj sayısını artır
+      setMsgCount(msgCount + 1);
     } catch (err) {
       setMessages((prev) => [
         ...prev,
@@ -107,9 +106,9 @@ const reply = data.reply;
       },
     ]);
 
+  // ---------------------------- UI ---------------------------- //
   return (
     <div className="chat-page">
-      {/* ⚠ HUKUKİ UYARI (KÜÇÜK – SOL ALTA ÇEKİLMİŞ) */}
       <div className="chat-warning">
         ⚠ AVO AI resmi hukuki danışmanlık vermez. Yanıtlar yalnızca bilgilendirme amaçlıdır.
       </div>
