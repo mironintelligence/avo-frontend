@@ -56,20 +56,19 @@ export default function Chat() {
     setInput("");
     setLoading(true);
 
-    try {
-      // *** BURASI SADECE askOpenAI ***
-      const reply = await askOpenAI(
-        [
-          {
-            role: "system",
-            content:
-              "Sen AVO AI - Hukuki AI Danışmanısın. Türk hukuk sistemiyle uyumlu şekilde sade, net ve bilgilendirme amaçlı cevap ver.",
-          },
-          ...messages,
-          userMsg,
-        ],
-        true // chat modu
-      );
+   try {
+  // BURAYA GELİYOR
+  const chatMessages = [
+    {
+      role: "system",
+      content:
+        "Sen AVO AI - Hukuki AI Danışmanısın. Türk hukuk sistemiyle uyumlu şekilde sade, net ve bilgilendirme amaçlı cevap ver.",
+    },
+    ...messages,
+    userMsg,
+  ];
+
+  const reply = await askOpenAI(chatMessages, true);
 
       setMessages((prev) => [
         ...prev,
